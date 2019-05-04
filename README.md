@@ -14,10 +14,11 @@ However if you do please cite us.
 
 ## Introduction <a name="introduction"></a>
 The RFTtoolbox currently contains code to generate smooth Gaussian, t and 
-F fields on a lattice of arbitrary size accounting for the edge effect. 
+F fields (with a zero or non-zero mean, the peaks of which can be specified) 
+on a lattice of arbitrary size accounting for the edge effect.
 
-It will soon contain code to perform clusterwise inference and analysis
-and to generate convolution fields.
+It will soon contain code to perform clusterwise inference and analysis and thresholding 
+using LKCS and to generate convolution fields as well as other functionalities.
 
 ## Folder Structure <a name="folderstruct"></a>
 
