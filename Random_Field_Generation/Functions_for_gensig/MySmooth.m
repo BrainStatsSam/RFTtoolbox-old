@@ -1,4 +1,4 @@
-function sImg = MySmooth(Img,smo)
+function sImg = MySmooth(Img,FWHM)
 % MYSMOOTH smooths the image Img using the methods from spm_smooth. It also 
 % normalizes the resulting image so that the highest value of the signal is 
 % 1.
@@ -31,16 +31,16 @@ Dim     = size(Img); %Calculate the dimensions of the Image.
 nDim    = length(Dim); %Calculate the number of dimensions.
 
 %If only 1 smoothing parameter given smooth the same in the x and y directions.
-if length(smo) == 1
-    smo = repmat(smo, 1, nDim); 
+if length(FWHM) == 1
+    FWHM = repmat(FWHM, 1, nDim); 
 end
 
-if any(smo)
+if any(FWHM)
     if nDim == 2
-        sImg = spm_conv(double(Img), smo(1), smo(2));
+        sImg = spm_conv(double(Img), FWHM(1), FWHM(2));
     elseif nDim == 3
         sImg = 0*Img; %Create an empty image of the right dimensions.
-        spm_smooth(double(Img),sImg,smo); 
+        spm_smooth(double(Img),sImg,FWHM); 
     else
         error('smo must be a 1x2 or a 1x3 vector of positive numbers.');
     end

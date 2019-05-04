@@ -1,4 +1,4 @@
-function [ data ] = noisegen( Dim, nSubj, FWHM, shape_of_array )
+function data = noisegen( Dim, nSubj, FWHM, shape_of_array )
 % NOISEGEN generates an array of N(0,1) noise smoothed with a gaussian 
 % kernel with a certain FWHM. By default this array is Dim by nSubj, but
 % this can be changed using the shape_of_array parameter.
@@ -36,7 +36,7 @@ function [ data ] = noisegen( Dim, nSubj, FWHM, shape_of_array )
 % noise_mean = mean(noise,1);
 %--------------------------------------------------------------------------
 % Authors:
-% Thomas Nichols and Sam Davenport
+% Sam Davenport and Thomas Nichols
 if nargin < 2
     nSubj  = 20; 
 end
@@ -107,11 +107,11 @@ for subj = 1:nSubj
         %Smooths the noise and divides by tt which is the sum of squares of
         %the kernel. This ensures that noise is unit variance.
         if nDim == 1
-            [Noises,tt] = spm_conv(RawNoise(:,subj),FWHM,FWHM);
+            [Noises,tt] = spm_conv_mod(RawNoise(:,subj),FWHM,FWHM);
         elseif nDim == 2
-            [Noises,tt] = spm_conv(RawNoise(:,:,subj),FWHM,FWHM);
+            [Noises,tt] = spm_conv_mod(RawNoise(:,:,subj),FWHM,FWHM);
         else
-            tt       = spm_smooth(RawNoise(:,:,:,subj),Noises,FWHM);
+            tt       = spm_smooth_mod(RawNoise(:,:,:,subj),Noises,FWHM);
         end
         Noises    = Noises/sqrt(tt); %Done to standardize.
     end
