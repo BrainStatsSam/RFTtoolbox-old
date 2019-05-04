@@ -1,4 +1,4 @@
-# RFTtoolbox: A toolbox designed for generation and analysis of random fields both continuously sampled and on a lattice.
+# RFTtoolbox (Beta Version): A toolbox designed for generation and analysis of random fields both continuously sampled and on a lattice.
 NOTE: This is a BETA version of this toolbox. Many more random field functions will soon be added.
 And some existing features will be tidied up. Watch this space! Feel free to use the functions available in your research.
 However if you do please cite us.
