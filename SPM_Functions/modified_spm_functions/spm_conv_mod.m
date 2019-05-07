@@ -1,4 +1,4 @@
-function [ X, ss ] = spm_conv(X,sx,sy)
+function [ X, ss ] = spm_conv_mod(X,sx,sy)
 % spm_conv is a one or two dimensional convolution of a matrix variable
 % in working memory.  It capitalizes on the sparisity structure of the
 % problem and the separablity of multidimensional convolution with a Gaussian
@@ -6,7 +6,7 @@ function [ X, ss ] = spm_conv(X,sx,sy)
 % restricted to non near-zero values. Need to rewrite your own version of
 % this! As this one is not great when the dimensions of the image are low
 % in one direction or another.
-%
+% 
 % If image is mean zero and variance one, scaling the smoothed image by
 % 1/sqrt(ss) will return it to unit variance.
 %--------------------------------------------------------------------------
