@@ -1,32 +1,42 @@
 function Sig = gensig( Mag, Rad, Smo, Dim, centre_locs )
-% GENSIG( Mag, Rad, Smo, Dim, centre_locs ) generates signal with peaks at
-% locations within an image of dimension Dim. The nth peak is created by
-% generating a spheroid (with dimension according to the dimension of the image)
-% of signal of height 1 with radius Rad(n) and then smoothing this with a
-% Gaussian kernel with FWHM: Smo(n). This is then scaled so that the peak 
-% has height Mag(n) is centred at a location in the output image Sig 
-% with indices given by centre_locs(n).
+% GENSIG( Mag, Rad, Smo, Dim, centre_locs ) generates signal with peaks 
+% (let npeaks denote the number of peaks) at locations within an image of 
+% dimension Dim. The nth peak is created by generating a spheroid 
+% (with dimension according to the dimension of the image) of signal of 
+% height 1 with radius Rad(n) and then smoothing this with a Gaussian kernel 
+% with FWHM: Smo(n). This is then scaled so that the peak has height Mag(n) 
+% and is centred at a location in the output image Sig with indices given 
+% by centre_locs(n).
 %--------------------------------------------------------------------------
 % ARGUMENTS
 % Mag       is a vector of length npeaks giving the magnitude of the 
-%           resulting signal at each peak.
+%           resulting signal at each peak. Note that if Mag is just a real
+%           number rather than a vector then all peaks are taken to have
+%           magnitude Mag. npeaks is then determined by the length of
+%           centre_locs.
 % Rad       is a vector of length npeaks giving the radius of the spheroid 
-%           signal at each peak prior to being smoothed.
+%           signal at each peak prior to being smoothed. Note that if Rad 
+%           is just a real number rather than a vector then all peaks are 
+%           taken to have radius Rad.
 % Smo       is a vector of length npeaks that gives the smoothing applied
 %           to the signal at each peak. The smoothing applied is Gaussian 
-%           with the same FWHM in each x,y and z directions.
-% Dim       the dimension of the output image
-% centre_locs   is a vector of length npeaks giving the coordinates of the 
-%               centre locations of each peak.
+%           with the same FWHM in each x,y and z directions. Note that if Smo 
+%           is just a real number rather than a vector then all peaks are
+%           smoothed with FWHM Smo.
+% Dim       a vector of length D giving the dimensions of the output image. 
+%           For example Dim =[20,50] means that the output image is 20 x 50.
+% centre_locs   is a cell array of length npeaks such that the nth entry is
+%               a length D vector giving the coordinates of the centre location
+%               of the nth peak.
 %--------------------------------------------------------------------------
 % OUTPUT
 % Sig      an image of dimension Dim with peaks centred at the locations
 %           specified by centre_locs.
 %--------------------------------------------------------------------------
 % EXAMPLES
-% %3D signal
-% Sig = gensig(2, 10, 6);
-% surf(Sig(:,:,50))
+% %2D signal
+% Sig = gensig([1,2], 3, [10,20], [100,150], {[40,30], [70,120]});
+% surf(Sig)
 %--------------------------------------------------------------------------
 % SEE ALSO
 % SimDemo
