@@ -3,9 +3,7 @@ function Sig = gensig( Mag, Rad, Smo, Dim, centre_locs )
 % locations within an image of dimension Dim. The nth peak is created by
 % generating a spheroid (with dimension according to the dimension of the image)
 % of signal of height 1 with radius Rad(n) and then smoothing this with a
-% Gaussian kernel with FWHM: Smo(n). This is then scaled so that the peak 
-% has height Mag(n) is centred at a location in the output image Sig 
-% with indices given by centre_locs(n).
+% Gaussian kernel with FWHM: Smo(n). This is then scaled 
 %--------------------------------------------------------------------------
 % ARGUMENTS
 % Mag       is a vector of length npeaks giving the magnitude of the 
@@ -20,7 +18,7 @@ function Sig = gensig( Mag, Rad, Smo, Dim, centre_locs )
 %               centre locations of each peak.
 %--------------------------------------------------------------------------
 % OUTPUT
-% Sig      an image of dimension Dim with peaks centred at the locations
+% data      an image of dimension Dim with peaks centred at the locations
 %           specified by centre_locs.
 %--------------------------------------------------------------------------
 % EXAMPLES
