@@ -3,6 +3,7 @@ rftboxloc = '/data/fireback/davenpor/davenpor/Toolboxes/RFTtoolbox/';
 clf
 pos_vector = [0,550,1000,600];
 set(gcf, 'position', pos_vector)
+set(0,'defaultAxesFontSize', 15);
 
 noise = noisegen(160,20,6);
 plot(mean(noise,2), 'linewidth', 2)
