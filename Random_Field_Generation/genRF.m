@@ -1,9 +1,9 @@
 function rfs = genRF( nreal, df, FWHM, Dim, asvector )
-% genRF( nreal, df, FWHM, Dim, asvector ) returns an nsubj by prod(Dim) 
+% genRF( nreal, df, FWHM, Dim, asvector ) returns an nreal by prod(Dim) 
 % set of random fields with degrees of freedom df and a given FWHM. 
 %--------------------------------------------------------------------------
 % ARGUMENTS
-% nreal:the number of realizations
+% nreal   the number of realizations
 % df    If df == 1, a GRF is generated. If df = [1, n] a t field with
 %       n degrees of freedom is generated. If df = [m, n] an F field 
 %       with m and n degrees of freedom is generated.
@@ -11,9 +11,10 @@ function rfs = genRF( nreal, df, FWHM, Dim, asvector )
 % Dim   The dimensions of each field. Default is Dim = [91,109,91].
 %       asvector determines whether an nreal by prod(Dim) or a nreal by Dim 
 %       array is returned. Default takes as_vector = 1.
+% asvector  0/1 if 1 then an nsubj by prod(Dim) 
 %--------------------------------------------------------------------------
 % OUTPUT
-% 
+% rfs   
 %--------------------------------------------------------------------------
 % EXAMPLES
 % rfs = genRF(10, [1,5], 5)

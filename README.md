@@ -30,9 +30,16 @@ field theory. Many more functions will be added to this folder.
 
 ### Random Field Generation <a name="RFfunctions"></a>
 
-Functions to generate Gaussian random fields.
+Functions to generate random fields (and to generate the signal for them 
+if you'd like this to be non-zero).
 
-#### asdf
+#### noisegen.m
+noisegen generates (a specified number of) smooth mean zero Gaussian fields 
+with a specified dimension that have variance 1 and are smoothed with an 
+isotropic Gaussian kernel with given FWHM.
+
+#### noisegen.m
+
 
 ## Set Up
 If you have any difficulties getting this code to run or have any questions
