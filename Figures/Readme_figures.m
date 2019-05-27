@@ -10,7 +10,7 @@ xlabel('Voxels')
 ylabel('Mean over 20 subjects')
 title('1D noise generation')
 
-export_fig([rftboxloc, 'Figures/readme_1Dreal.pdf'], '-transparent')
+export_fig([rftboxloc, 'Figures/readme_1Dreal.png'], '-transparent')
 
 
 clf
@@ -26,7 +26,7 @@ title('2D noise generation')
 xlabel('x')
 ylabel('y')
 
-export_fig([rftboxloc, 'Figures/readme_2Dreal.pdf'], '-transparent')
+export_fig([rftboxloc, 'Figures/readme_2Dreal.png'], '-transparent')
 
 clf
 pos_vector = [0,550,2000,1000];
@@ -40,4 +40,4 @@ ylabel('y')
 Sig = gensig([1.3,2], 3, [10,20], [100,150], {[40,30], [70,120]});
 surf(Sig)
 
-export_fig([rftboxloc, 'Figures/readme_signal.pdf'], '-transparent')
+export_fig([rftboxloc, 'Figures/readme_signal.png'], '-transparent')

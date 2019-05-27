@@ -72,7 +72,7 @@ Sig = gensig([1.3,2], 3, [10,20], [100,150], {[40,30], [70,120]});
 surf(Sig)
 ```
 
-![](readme_signal.pdf)
+![](readme_signal.png)
 
 ## Set Up
 If you have any difficulties getting this code to run or have any questions
