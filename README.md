@@ -38,9 +38,30 @@ noisegen generates (a specified number of) smooth mean zero Gaussian fields
 with a specified dimension that have variance 1 and are smoothed with an 
 isotropic Gaussian kernel with given FWHM.
 
+The mean of 20 Gaussian random fields generated on a grid of 1x160 with 
+an isotropic Gaussian kernel with FWHM 6:
+```
+noise = noisegen(160,20,6);
+plot(mean(noise,2), 'linewidth', 2)
+```
+![alt tag](surf_signal.png)
+
+
+The mean of 20 Gaussian random fields generated on a grid of 160x160 with 
+an isotropic Gaussian kernel with FWHM 6:
+```
+Dim = [160,160]
+noise = noisegen(Dim, 20, 6);
+noise_mean = mean(noise,3);
+surf(noise_mean)
+```
+![alt tag](surf_signal.png)
+
+
 #### genRF.m
 genRF returns a set of isotropic random fields (either Gaussian, t or 
 F-fields) which have a specified number of degrees of freedom and smoothing.
+
 
 #### gensig.m
 gensig generates signal with peaks at locations within an image of specified 
@@ -51,7 +72,7 @@ Sig = gensig([1,2], 3, [10,20], [100,150], {[40,30], [70,120]});
 surf(Sig)
 ```
 
-![alt tag](surf_signal.png)
+![alt tag](/Figures/readme_signal.pdf)
 
 ## Set Up
 If you have any difficulties getting this code to run or have any questions
