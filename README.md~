@@ -30,10 +30,7 @@ field theory. Many more functions will be added to this folder.
 
 ### Random Field Generation <a name="RFfunctions"></a>
 
-Functions to generate Gaussian random fields.
-
-#### asdf
-
+Functions to generate Gaussian random fields and the 
 ## Set Up
 If you have any difficulties getting this code to run or have any questions
 feel free to get in touch with me via samuel.davenport(AT)stats.ox.ac.uk.
