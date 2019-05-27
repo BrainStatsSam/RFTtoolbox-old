@@ -37,7 +37,7 @@ title('2D Signal Generation')
 xlabel('x')
 ylabel('y')
 
-Sig = gensig([1,2], 3, [10,20], [100,150], {[40,30], [70,120]});
+Sig = gensig([1.3,2], 3, [10,20], [100,150], {[40,30], [70,120]});
 surf(Sig)
 
 export_fig([rftboxloc, 'Figures/readme_signal.pdf'], '-transparent')

@@ -68,11 +68,11 @@ gensig generates signal with peaks at locations within an image of specified
 dimension. It provides control over the extent, shape and magnitude of each peak.
 
 ```
-Sig = gensig([1,2], 3, [10,20], [100,150], {[40,30], [70,120]});
+Sig = gensig([1.3,2], 3, [10,20], [100,150], {[40,30], [70,120]});
 surf(Sig)
 ```
 
-![alt tag](/Figures/readme_signal.pdf)
+![alt tag](https://github.com/BrainStatsSam/RFTtoolbox/blob/master/Figures/readme_signal.pdf)
 
 ## Set Up
 If you have any difficulties getting this code to run or have any questions
