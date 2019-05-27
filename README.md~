@@ -35,8 +35,8 @@ for them if you'd like this to be non-zero).
 
 #### noisegen.m
 noisegen generates (a specified number of) smooth mean zero Gaussian fields 
-with a specified dimension (D = 1, 2 or 3) that have variance 1 and are 
-smoothed with an isotropic Gaussian kernel with given FWHM.
+with a specified dimension that have variance 1 and are smoothed with an 
+isotropic Gaussian kernel with given FWHM.
 
 The mean of 20 Gaussian random fields generated on a grid of 1x160 with 
 an isotropic Gaussian kernel with FWHM 6:
@@ -64,8 +64,8 @@ F-fields) which have a specified number of degrees of freedom and smoothing.
 
 #### gensig.m
 gensig generates signal with peaks at locations within an image of specified 
-dimension D = 1,2 or 3. It provides control over the extent, shape and magnitude of each peak.
-Below we provide a 2D illustration involving 2 peaks.
+dimension. It provides control over the extent, shape and magnitude of each peak.
+Below we p
 
 ```
 Sig = gensig([1.3,2], 3, [10,20], [100,150], {[40,30], [70,120]});
