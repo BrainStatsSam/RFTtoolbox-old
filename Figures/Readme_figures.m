@@ -1,3 +1,5 @@
+% Need to set rftboxloc to the right directory.
+% export_fig is required to save the figures
 rftboxloc = '/data/fireback/davenpor/davenpor/Toolboxes/RFTtoolbox/';
 
 clf
@@ -15,7 +17,7 @@ export_fig([rftboxloc, 'Figures/readme_1Dreal.png'], '-transparent')
 
 
 clf
-pos_vector = [0,550,2000,1000];
+pos_vector = [0,550,1600,800];
 set(0,'defaultAxesFontSize', 20);
 set(gcf, 'position', pos_vector)
 
@@ -30,15 +32,15 @@ ylabel('y')
 export_fig([rftboxloc, 'Figures/readme_2Dreal.png'], '-transparent')
 
 clf
-pos_vector = [0,550,2000,1000];
+pos_vector = [0,550,1600,800];
 set(0,'defaultAxesFontSize', 20);
 set(gcf, 'position', pos_vector)
 
+Sig = gensig([1.3,2], 3, [10,20], [100,150], {[40,30], [70,120]});
+surf(Sig)
 title('2D Signal Generation')
 xlabel('x')
 ylabel('y')
 
-Sig = gensig([1.3,2], 3, [10,20], [100,150], {[40,30], [70,120]});
-surf(Sig)
 
 export_fig([rftboxloc, 'Figures/readme_signal.png'], '-transparent')
