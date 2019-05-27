@@ -44,7 +44,7 @@ an isotropic Gaussian kernel with FWHM 6:
 noise = noisegen(160,20,6);
 plot(mean(noise,2), 'linewidth', 2)
 ```
-![alt tag](surf_signal.png)
+![alt tag](Figures/readme_1Dreal.png)
 
 
 The mean of 20 Gaussian random fields generated on a grid of 160x160 with 
@@ -55,8 +55,7 @@ noise = noisegen(Dim, 20, 6);
 noise_mean = mean(noise,3);
 surf(noise_mean)
 ```
-![alt tag](surf_signal.png)
-
+![alt tag](Figures/readme_2Dreal.png)
 
 #### genRF.m
 genRF returns a set of isotropic random fields (either Gaussian, t or 
@@ -72,7 +71,7 @@ Sig = gensig([1.3,2], 3, [10,20], [100,150], {[40,30], [70,120]});
 surf(Sig)
 ```
 
-![](Figures/readme_signal.png)
+![alt tag](Figures/readme_signal.png)
 
 ## Set Up
 If you have any difficulties getting this code to run or have any questions
