@@ -19,7 +19,7 @@ pos_vector = [0,550,2000,1000];
 set(0,'defaultAxesFontSize', 20);
 set(gcf, 'position', pos_vector)
 
-Dim = [160,160];
+Dim = [100,100];
 noise = noisegen(Dim, 20, 6);
 noise_mean = mean(noise,3);
 surf(noise_mean)

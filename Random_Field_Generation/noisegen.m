@@ -27,7 +27,7 @@ function data = noisegen( Dim, nSubj, FWHM, shape_of_array )
 % noise = noisegen(160,20,6);
 % plot(mean(noise,2), 'linewidth', 2)
 %
-% Dim = [160,160]
+% Dim = [100,100]
 % noise = noisegen(Dim, 20, 6);
 % noise_mean = mean(noise,3);
 % surf(noise_mean)
