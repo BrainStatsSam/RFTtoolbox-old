@@ -38,7 +38,7 @@ set(gcf, 'position', pos_vector)
 
 Sig = gensig([1.3,2], 3, [10,20], [100,150], {[40,30], [70,120]});
 surf(Sig)
-title('2D Signal Generation')
+title('2D signal generation')
 xlabel('x')
 ylabel('y')
 

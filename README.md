@@ -68,7 +68,13 @@ dimension D = 1,2 or 3. It provides control over the extent, shape and magnitude
 Below we provide a 2D illustration involving 2 peaks.
 
 ```
-Sig = gensig([1.3,2], 3, [10,20], [100,150], {[40,30], [70,120]});
+peak_magnitudes = [1.3,2]
+radii = 3;
+smoothing = [10,20];
+image_dimensions = [100,150];
+peak_locations =  {[40,30], [70,120]}
+
+Sig = gensig(peak_magnitudes, radii, smoothing, image_dimensions, peak_locations);
 surf(Sig)
 ```
 
