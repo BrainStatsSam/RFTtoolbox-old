@@ -43,14 +43,15 @@ genRF returns a set of isotropic random fields (either Gaussian, t or
 F-fields) which have a specified number of degrees of freedom and smoothing.
 
 #### gensig.m
-GENSIG( Mag, Rad, Smo, Dim, centre_locs ) generates signal with peaks 
-(let npeaks denote the number of peaks) at locations within an image of 
-dimension Dim. The nth peak is created by generating a spheroid 
-(with dimension according to the dimension of the image) of signal of 
-height 1 with radius Rad(n) and then smoothing this with a Gaussian kernel 
-with FWHM: Smo(n). This is then scaled so that the peak has height Mag(n) 
-and is centred at a location in the output image Sig with indices given 
-by centre_locs(n).
+gensig generates signal with peaks at locations within an image of specified 
+dimension. It provides control over the extent, shape and magnitude of each peak.
+
+```
+Sig = gensig([1,2], 3, [10,20], [100,150], {[40,30], [70,120]});
+surf(Sig)
+```
+
+![alt tag](surf_signal.png)
 
 ## Set Up
 If you have any difficulties getting this code to run or have any questions
