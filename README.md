@@ -47,10 +47,10 @@ plot(mean(noise,2), 'linewidth', 2)
 ![alt tag](Figures/readme_1Dreal.png)
 
 
-The mean of 20 Gaussian random fields generated on a grid of 160x160 with 
+The mean of 20 Gaussian random fields generated on a grid of 100x100 with 
 an isotropic Gaussian kernel with FWHM 6:
 ```
-Dim = [160,160]
+Dim = [100,100]
 noise = noisegen(Dim, 20, 6);
 noise_mean = mean(noise,3);
 surf(noise_mean)
