@@ -19,7 +19,7 @@ if nargin < 3
 end
 
 if use_fwhm
-    sigma2 = FWHM2sigma(sigma2_or_FWHM);
+    sigma2 = FWHM2sigma(sigma2_or_FWHM)^2;
 else
     sigma2 = sigma2_or_FWHM;
 end
