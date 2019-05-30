@@ -1,4 +1,4 @@
-function out = Gker( x, sigma2_or_FWHM, use_fwhm )
+function [val, deriv, deriv2] = Gker( x, sigma2_or_FWHM, use_fwhm )
 % GKER( x, sigma2_or_FWHM, use_fwhm ) calculates the Gaussian Kernel given
 % data and the variance: sigma2 or FWHM.
 %--------------------------------------------------------------------------
@@ -14,6 +14,7 @@ function out = Gker( x, sigma2_or_FWHM, use_fwhm )
 % 
 %--------------------------------------------------------------------------
 % AUTHOR: Sam Davenport.
+% Don't change this! Too much depends on it!
 if nargin < 3
     use_fwhm = 1;
 end
@@ -24,7 +25,9 @@ else
     sigma2 = sigma2_or_FWHM;
 end
 
-out = exp(-x.^2/(2*sigma2))/sqrt(2*pi*sigma2);
+val = exp(-x.^2/(2*sigma2))/sqrt(2*pi*sigma2);
+deriv = (-x/sigma2).*exp(-x.^2/(2*sigma2))/sqrt(2*pi*sigma2);
+deriv2 = (-1/sigma2 + x.^2/sigma2^2).*exp(-x.^2/(2*sigma2))/sqrt(2*pi*sigma2);
 
 end
 
