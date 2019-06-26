@@ -20,7 +20,8 @@ function rfs = genRF( nreal, df, FWHM, Dim, asvector )
 %       the specified degrees of freedom.
 %--------------------------------------------------------------------------
 % EXAMPLES
-% rfs = genRF(10, [1,5], 5)
+% rfs = genRF(10, [1,5], 6) %Generates 10 t-fields each with 5 degrees of
+%                           %freedom and generated from FWHM 6 fields.
 %--------------------------------------------------------------------------
 % AUTHOR: Sam Davenport.
 if nargin < 4
@@ -47,7 +48,7 @@ if isequal(df, 1)
     end
 else
     if length(df) ~= 2 
-        error('Misoptioning')
+        error('For df not equal to 1 you need a vector of length 2 to specify the degrees of freedom in the numerator and the denominator.')
     end
 end
 

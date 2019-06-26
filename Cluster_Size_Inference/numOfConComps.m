@@ -1,4 +1,4 @@
-function [number_of_clusters, occurences, sizes] = numOfConComps(data, thresh, connectivity_criterion)
+function [number_of_clusters, occurences, sizes, index_locations] = numOfConComps(data, thresh, connectivity_criterion)
 % NUMOFCONCOMPS(data, thresh, connectivity_criterion) calculates the number
 % of connected components in an array that lie above a threshold.
 %--------------------------------------------------------------------------
@@ -26,7 +26,12 @@ function [number_of_clusters, occurences, sizes] = numOfConComps(data, thresh, c
 % AUTHORS: Tom Maullin, Sam Davenport (05/02/2018)
 s = size(data);
 ones_and_zeros = zeros(s);
-D = length(s);
+
+if s(1) == 1
+    D = 1;
+else
+    D = length(s);
+end
 ones_and_zeros(data > thresh) = 1;
 
 %If we're in the 2d case only look at components connected vertically
@@ -56,7 +61,8 @@ number_of_clusters = conComponents.NumObjects;
 
 if nargout > 1
     %Get a list of sizes of the clusters.
-    sizeArray = cellfun(@(x) numel(x), conComponents.PixelIdxList);
+    index_locations = conComponents.PixelIdxList;
+    sizeArray = cellfun(@(x) numel(x), index_locations);
     
     %Get the number of occurences for each cluster size. e.g. occurences(k)
     %is the number of times we observed clusters of size sizes(k).
